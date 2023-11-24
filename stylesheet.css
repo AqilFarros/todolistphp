@@ -1,0 +1,361 @@
+* {
+    color: white;
+}
+
+.body {
+    background: #161623;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: ease-in-out .5s;
+}
+
+body.light {
+    background-color: #A6E3E9;
+}
+
+.row {
+    background: rgb(38, 38, 61, .5);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    transition: ease-in-out .5s;
+}
+
+.row.light {
+    background-color: rgb(166, 227, 232, .5);
+}
+
+.change {
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.change form {
+    width: 100%;
+}
+
+.tombol {
+    color: #161623;
+    border-color: #161623;
+    background-color: transparent;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid #161623;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: ease-in-out .25s;
+}
+
+.tombol:hover {
+    color: white;
+    background-color: #161623;
+}
+
+.row.light .tombol {
+    color: #A6E3E9;
+    border-color: #A6E3E9;
+}
+
+.row.light .tombol:hover {
+    background-color: #00eaff;
+}
+
+.row input.bg-dark {
+    transition: ease-in-out .5s;
+}
+
+.row.light input.bg-dark {
+    background-color: white !important;
+}
+
+table {
+    width: 100%;
+}
+
+table tr td {
+    padding: 10px;
+    text-align: center;
+}
+
+table tr td:nth-child(2) {
+    text-align: left;
+}
+
+table tr:nth-child(odd) {
+    background: #71C9CE;
+}
+
+table tr:nth-child(even) {
+    background: #A6E3E9;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.box {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 15px;
+    margin: 20px;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -200px;
+    transform: skewX(35deg);
+    transition: .2s;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .1), transparent);
+}
+
+.box:hover::before {
+    left: calc(100% + 100px);
+    transition: .2s;
+}
+
+.number {
+    position: absolute;
+    font-size: 20px;
+    top: 0;
+    left: 5%;
+}
+
+.bulat {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, .2);
+    clip-path: circle(50% at 50% 50%);
+    transition: .5s;
+}
+
+.box:hover .bulat {
+    transform: rotate(-45deg);
+    width: 200px;
+    height: 200px;
+    clip-path: inset(0 84% 61% 0);
+    top: 20.99%;
+    left: 37.9%;
+}
+
+.bulatBesar {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 170px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, .2);
+    clip-path: circle(50% at 50% 50%);
+    transition: .5s;
+}
+
+.box:hover .bulatBesar {
+    transform: rotate(45deg);
+    width: 200px;
+    height: 500px;
+    clip-path: inset(0 84% 61% 0);
+    top: 18%;
+    left: 10%;
+}
+
+.list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px 20px;
+    font-size: 20px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.delete {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.bottom a {
+    width: 39px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.bottom a:hover {
+    width: 130px;
+}
+
+.bottom a i {
+    color: transparent;
+}
+
+.bottom a:hover i {
+    color: white;
+}
+
+.bottom a i::before {
+    margin-right: 10px;
+    color: white;
+}
+
+/* ... */
+.toggle {
+    position: fixed;
+    top: 10%;
+    right: 5%;
+}
+
+.sun-box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 100%, 80% 100%, 35% 100%, 0 65%, 0 0);
+    transition: ease-in-out .2s;
+    overflow: hidden;
+}
+
+.sun-box:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.moon {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    top: 37%;
+    left: 37%;
+    background: #fff;
+    clip-path: ellipse(33% 40% at 50% 50%);
+    visibility: visible;
+    transform: translate(0, 0px);
+    opacity: 1;
+    transition: .4s;
+}
+
+.sun-box.active .moon {
+    opacity: 0;
+    transform: translate(0, -50px);
+    visibility: hidden;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: #fff 5px solid;
+    border-radius: 50%;
+}
+
+.sun-box .line {
+    transform: rotate(calc(45deg * var(--i) + 90deg)) translate(calc(-50px * var(--i)));
+    opacity: 0;
+    border-radius: 5px;
+    background: #fff;
+    width: 5px;
+    transition: .4s;
+}
+
+.sun-box.active .line {
+    transform: rotate(calc(45deg * var(--i)));
+    opacity: 1;
+}
+
+.line:nth-child(odd) {
+    height: 20px;
+}
+
+.line:nth-child(even) {
+    height: 15px;
+}
+
+.sun-box.active .line:nth-child(1) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sun-box .line:nth-child(2) {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+}
+
+.sun-box.active .line:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    right: 9.89%;
+    transform: translate(0, -50%) rotate(90deg);
+}
+
+.sun-box .line:nth-child(4) {
+    position: absolute;
+    top: 75%;
+    right: 20%;
+}
+
+.sun-box.active .line:nth-child(5) {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sun-box .line:nth-child(6) {
+    position: absolute;
+    top: 75%;
+    left : 20%;
+}
+
+.sun-box.active .line:nth-child(7) {
+    position: absolute;
+    top: 50%;
+    left: 9.89%;
+    transform: translate(0, -50%) rotate(90deg);
+}
+
+.sun-box .line:nth-child(8) {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
