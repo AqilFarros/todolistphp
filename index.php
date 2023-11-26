@@ -32,7 +32,7 @@
             <div class="row justify-content-center m-auto shadow mt-3 py-3 col-md-30">
                 <h2 class="text-center text-warning font-monospace">TODO LIST</h2>
                 <div class="col-8">
-                    <input type="text" name="list" class="form-control shadow bg-dark text-light">
+                    <input type="text" name="list" class="form-control shadow bg-dark text-light input">
                 </div>
                 <div class="col-2">
                     <button class="tombol"><i class="fa-solid fa-plus"></i></button>
@@ -75,12 +75,47 @@
 
     <script>
         let sunBox = document.querySelector(".sun-box");
+        let listBox = document.querySelectorAll(".box");
+        let wrapper = document.querySelector(".wrapper");
+        let input = document.querySelector(".input");
 
-        sunBox.onclick = function() {
-            this.classList.toggle("active");
+        sunBox.addEventListener("click", () => {
+            sunBox.classList.toggle("active");
+            input.classList.toggle("light");
             document.body.classList.toggle("light");
             document.querySelector(".row").classList.toggle("light");
-        }
+            listBox.forEach((listBox) => {
+                let perubahan = setInterval(() => {
+                    listBox.style.transition = "0s";
+                    listBox.style.width = "0px";
+                    listBox.style.height = "0px";
+
+                    clearInterval(perubahan)
+
+                    setTimeout(() => {
+                        listBox.style.transition = ".4s";
+                        listBox.style.height = "280px";
+
+                        clearInterval(perubahan)
+
+                        setTimeout(() => {
+                            listBox.style.transition = "1s";
+                            listBox.style.width = "280px";
+
+                            clearInterval(perubahan)
+                        }, 700)
+                    }, 500)
+                }, 1)
+            })
+
+            wrapper.style.transition = "1s";
+            wrapper.style.justifyContent = "flex-start";
+
+            // Setelah 1 detik, mengatur wrapper menjadi center
+            setTimeout(() => {
+                wrapper.style.justifyContent = "center";
+            }, 700);
+        })
     </script>
 </body>
 
